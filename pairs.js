@@ -17,9 +17,23 @@
 * - It returns an empty array if it gets passed nothing:
 *       pairs() returns []
 ****************************************************************/
-function pairs(names) {
-  // Your code goes here
+
+function pairs(names = []) {  
+  const pairs = []
+  if (names.length % 2===0 ){
+  for (let i=0; i < names.length; i++){
+      pairs.push([names.getRandom(), names.getRandom()])
+    }}
+  else {
+    for (let i=0; i < names.length-1; i++){
+      pairs.push([names.getRandom(), names.getRandom()])
+      pairs.push([names.pop()]);
+    }
+    
+  }
+  return pairs;
 }
+
 
 module.exports = pairs;
 
